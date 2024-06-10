@@ -6,20 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/78c0a6313e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
     <div id="header">
         <div class="container">
-            <nav>      
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>                          
+            <nav> 
+                <div class="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-circle-xmark hidden"></i>
+                </div>     
                 <ul id="sidemenu">
-                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    
+                  
                 </ul>
                 
             </nav>
@@ -133,7 +135,6 @@
         </div>
     </div>
 
-    
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
@@ -148,7 +149,7 @@
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab");
         }
-    </script>
+     </script>
     <script>
         var sidemenu = document.getElementById("sidemenu");
         function openmenu(){
@@ -158,7 +159,6 @@
             sidemenu.style.right = "-200px";
         }
     </script>
-    
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxzrrS1CVfLJrmPaVFx7zsnxrbNJiBkS1VpjygvMt5m8H_TXMe3hflAaIm3XKgUW1Ly/exec'
         const form = document.forms['submit-to-google-sheet']
@@ -179,3 +179,4 @@
     </script>
 </body>
 </html>
+
