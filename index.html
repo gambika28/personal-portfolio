@@ -6,24 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://kit.fontawesome.com/78c0a6313e.js" crossorigin="anonymous"></script>
+   
 </head>
 <body>
     <div id="header">
         <div class="container">
-            <nav> 
+            <nav>
                 <div class="menu-toggle">
-                    <i class="fa-solid fa-bars"></i>
-                    <i class="fa-solid fa-circle-xmark hidden"></i>
-                </div>     
+                    <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+                </div>
                 <ul id="sidemenu">
+                    <li class="close-icon"><i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i></li>
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
-                  
                 </ul>
-                
             </nav>
             <div class="header-content">
                 <div class="profile-pic">
@@ -51,7 +50,6 @@
                     In my free time, I enjoy working on side projects, learning new technologies, and contributing to open-source projects.<br>
                     I'm driven by my curiosity to explore new ideas and my passion for creating innovative solutions to real-world problems.<br>
                     Ultimately, my goal is to continue growing as a developer and make meaningful contributions to the tech industry.</p>
-
                 </div>
                 <div class="about-col-2">
                     <div class="tab-titles">
@@ -59,8 +57,7 @@
                         <p class="tab-links" onclick="openTab('experience')">Experience</p>
                         <p class="tab-links" onclick="openTab('education')">Education</p>
                     </div>
-                    <div class="tab-contents active-tab" id="skills"> 
-                                             
+                    <div class="tab-contents active-tab" id="skills">
                         <ul>
                             <li><span>Programming Languages</span><br>data structures and algorithms in C++, JavaScript, HTML, CSS, Python, Data Science</li>
                             <li><span>Frameworks/Libraries</span><br>React.js, Node.js</li>
@@ -69,21 +66,21 @@
                             <li><span>Other</span><br>Git</li>
                         </ul>
                     </div>
-                    <div class="tab-contents" id="education">                        
+                    <div class="tab-contents" id="education">
                         <ul>
-                            <li><span>2021 - Present :</span><br>Bachelor of Technology in Chemical Engineering,IIT Roorkee, India</li>                            
+                            <li><span>2021 - Present :</span><br>Bachelor of Technology in Chemical Engineering,IIT Roorkee, India</li>
                             <li><span>2019 - 2021 :</span><br>Intermediate (Class 11th & 12th) at Sri Chaitanya Junior College, Hyderabad, India</li>
                             <li><span>2019 :</span><br> High School at Sri Chaitanya School, Hyderabad, India</li>
                         </ul>
                     </div>
-                    <div class="tab-contents" id="experience">                        
+                    <div class="tab-contents" id="experience">
                         <ul>
                             <li><span> Present</span><br>Full Stack Developer Intern at Kosha Solutions, India.
                                 <br>- Developed and maintained web applications using React.js and Node.js
-                                <br>- Collaborated with team members to design and implement new features</li>                            
+                                <br>- Collaborated with team members to design and implement new features</li>
                             <li><span>Web Development </span><br>Frontend Development</li>
                             <li><span>MATLAB</span><br>- Using matlab created a model for Artificial animal drug evaluation
-                                <br>- Using matlab created a model A regional blood flow model for beta 2 microglobulin kinetics</li>                            
+                                <br>- Using matlab created a model A regional blood flow model for beta 2 microglobulin kinetics</li>
                         </ul>
                     </div>
                 </div>
@@ -91,20 +88,20 @@
         </div>
     </div>
     <!-- -------Projects-------- -->
-  <div id="Projects">
-    <div class="container">
-        <h2 class="sub-title">Projects</h2>
-        <div class="work-list">
-            <div class="work">
-                <img src="images/project.png"> 
-                <div class="layer">
-                    <h3>personal portfolio</h3>
+    <div id="projects">
+        <div class="container">
+            <h2 class="sub-title">Projects</h2>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/project.png">
+                    <div class="layer">
+                        <h3>Personal Portfolio</h3>
+                    </div>
                 </div>
-            </div>                       
+            </div>
+            <a href="#" class="btn">See more</a>
         </div>
-        <a href="#" class="btn">See more</a>
     </div>
-  </div>
 
     <!-- Contact -->
     <div id="contact">
@@ -149,15 +146,32 @@
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab");
         }
-     </script>
+    </script>
     <script>
         var sidemenu = document.getElementById("sidemenu");
-        function openmenu(){
-            sidemenu.style.right = "0";
+        function openmenu() {
+            if (window.innerWidth <= 768) {
+             document.getElementById("sidemenu").classList.add("open");
+           }
+          }
+
+        function closemenu() {
+           if (window.innerWidth <= 768) {
+         document.getElementById("sidemenu").classList.remove("open");
+          }
+          }
+    </script>
+    
+    <script>
+        function toggleMenu() {
+            var sidemenu = document.getElementById("sidemenu");
+            sidemenu.classList.toggle("open");
         }
-        function closemenu(){
-            sidemenu.style.right = "-200px";
+        function closeMenu() {
+            var sidemenu = document.getElementById("sidemenu");
+            sidemenu.classList.remove("open");
         }
+          
     </script>
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxzrrS1CVfLJrmPaVFx7zsnxrbNJiBkS1VpjygvMt5m8H_TXMe3hflAaIm3XKgUW1Ly/exec'
@@ -179,4 +193,3 @@
     </script>
 </body>
 </html>
-
